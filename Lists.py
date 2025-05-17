@@ -1,0 +1,25 @@
+main_characters = ["Dan", "Zenith", "Brutus", "Clara", "Sid"]
+
+print(main_characters)
+
+print(main_characters[0])
+
+print(main_characters[-1])
+
+print(main_characters[1:])
+
+print(main_characters[1:3])
+
+print(main_characters[-1:])
+
+print(main_characters[-3:])
+
+print("--------------------------")
+
+main_characters[1] = "Zenith (Ascended)"
+
+print(main_characters)
+
+print(main_characters[1])
+
+
