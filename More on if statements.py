@@ -25,7 +25,7 @@ def max_num(num1, num2, num3):
     else:
         return num3
 
-print(max_num(50, 999, 60))
+print(max_num(50, 90, 50))
 
 print("-------------------")
 
