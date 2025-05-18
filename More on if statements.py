@@ -11,6 +11,8 @@ else:
     print("The car is neither red nor blue")
     car_colour = input("What is the colour of the car? ")
     print(f"The car is {car_colour}")
-    if car_colour == "red" or car_colour == "blue":
+    if car_colour.lower() == "red" or car_colour.lower() == "blue":
         print("You wasted my time a little bit.")
+
+print("-------------------")
 
