@@ -29,8 +29,8 @@ if response.lower() == "yes" or response.lower() == "y":
     print("You are in a dark room")
 
 while playing:
-    command = input("> ").lower()
-    if command.lower() == "quit":
+    command = input("> ").strip().lower()
+    if command in ["quit", "stop playing", "exit"]:
         playing = False
         print("Thanks for playing!")
 
@@ -46,7 +46,7 @@ while playing:
             print("You have nothing.")
             print("Broke ass.")
         else:
-            print("You have: " + ",".join(inventory))
+            print("You have: " + ", ".join(inventory))
 
     elif command == "look around":
         print("You are in a dark room.")
