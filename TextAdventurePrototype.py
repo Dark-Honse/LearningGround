@@ -85,16 +85,18 @@ while playing:
             print("What door?")
 
     elif command == "use key":
-        if door_found:
-            if "key" in inventory and door_locked == True:
-                print("You unlocked the door with the key.")
-                door_locked = False
-            elif "key" in inventory and door_locked == False:
-                print("You already unlocked the door.")
+        if "key" in inventory:
+            if door_found:
+                if door_locked:
+                    print("You unlocked the door with the key.")
+                    door_locked = False
+                elif not door_locked:
+                    print("You already unlocked the door")
             else:
-                print("What key?")
+                print("You stare at the key quizzically.")
         else:
-            print("You stare at the key quizzically.")
+            print("What key?")
+
 
     elif command == "go south":
         print("A bed. It is low and lumpy.")
