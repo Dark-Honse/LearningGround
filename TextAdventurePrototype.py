@@ -6,6 +6,18 @@ inventory = []
 unknown_response = ["huh?", "I don't understand that..", "try again chief"]
 unknown_count = 0
 
+areas = {
+    "cell":
+        {"description": "A small dank room with a stained bed and window with iron bars.",
+         "items": ["key"],
+         "exits": {
+            "north": "wall",
+            "east": "window",
+            "south": "bed",
+            "west": "door"}}
+
+}
+
 door_locked = True
 bed_found = False
 
@@ -63,6 +75,8 @@ while playing:
             print("The door is locked")
         else:
             print("The door creeks open...")
+            print("You have escaped the room...")
+            playing = False
 
     elif command == "use key":
         if "key" in inventory:
