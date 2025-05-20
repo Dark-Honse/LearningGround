@@ -75,7 +75,7 @@ while playing:
 
     elif command == "try door" or command == "open door":
         if door_found:
-            if door_locked == True:
+            if door_locked:
                 print("The door is locked")
             else:
                 print("The door creaks open...")
