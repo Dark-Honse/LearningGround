@@ -74,14 +74,16 @@ while playing:
         if door_locked == True:
             print("The door is locked")
         else:
-            print("The door creeks open...")
+            print("The door creaks open...")
             print("You have escaped the room...")
             playing = False
 
     elif command == "use key":
-        if "key" in inventory:
+        if "key" in inventory and door_locked == True:
             print("You unlocked the door with the key.")
             door_locked = False
+        elif "key" in inventory and door_locked == False:
+            print("You already unlocked the door")
         else:
             print("What key?")
 
