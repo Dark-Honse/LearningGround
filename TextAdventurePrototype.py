@@ -116,13 +116,13 @@ while playing:
 
     else:
         print(random.choice(unknown_response))
-        # unknown_count += 1
-        # if unknown_count <5:
-        #     print(random.choice(unknown_response))
-        #
-        # else:
-        #     print("You're not cut out for this.")
-        #     playing = False
+        unknown_count += 1
+        if unknown_count <5:
+            print(random.choice(unknown_response))
+
+        else:
+            print("You're not cut out for this.")
+
 
 
 
