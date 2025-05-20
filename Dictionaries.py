@@ -1,13 +1,24 @@
 rooms = {
-    "stone room": "You are in a dark room.",
-    "large room": "You are in a larger furnished room",
-    "bin room": "you are in a room lined with bins. Rubbish is scattered everywhere"
+    "stone room":
+        {"description": "You are in a dark room.",
+         "items": ["key"],
+         "exits": ["large room"]},
+    "large room":
+        {"description": "You are in a larger furnished room",
+         "items": ["dagger", "scrawled note", "match box"],
+         "exits": ["stone room", "bin room"]},
+    "bin room":
+        {"description": "you are in a room lined with bins. Rubbish is scattered everywhere",
+         "items": ["revolver"],
+         "exits": ["large room"]}
 }
 
 room_name = input("Enter a room name: ").lower()
 
 if room_name in rooms:
-    print(rooms[room_name])
+    print("description: " + (rooms[room_name]["description"]))
+    print("items: " + ", ".join(rooms[room_name]["items"]))
+    print("exits: " + ", ".join(rooms[room_name]["exits"]))
 else:
     print("You made that up.")
 
