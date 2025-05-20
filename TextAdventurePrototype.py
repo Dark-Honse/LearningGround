@@ -20,6 +20,7 @@ areas = {
 
 door_locked = True
 bed_found = False
+door_found = False
 
 print("Welcome")
 print("Ready to play?")
@@ -57,6 +58,7 @@ while playing:
         print("you don't want to think about, is in the south.")
         bed_found = True
         print("To the west, a heavy looking wooden door with cracked paint.")
+        door_found = True
 
     elif command == "go north":
         print("You are standing in front of a nasty, stained wall.")
@@ -69,14 +71,18 @@ while playing:
     elif command == "go west":
         print("From close, it looks like some of the marks")
         print("on this door were intentional.")
+        door_found = True
 
     elif command == "try door" or command == "open door":
-        if door_locked == True:
-            print("The door is locked")
+        if door_found:
+            if door_locked == True:
+                print("The door is locked")
+            else:
+                print("The door creaks open...")
+                print("You have escaped the room...")
+                playing = False
         else:
-            print("The door creaks open...")
-            print("You have escaped the room...")
-            playing = False
+            print("What door?")
 
     elif command == "use key":
         if "key" in inventory and door_locked == True:
