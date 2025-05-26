@@ -6,9 +6,11 @@ inventory = []
 unknown_response = ["huh?", "I don't understand that..", "try again chief"]
 unknown_count = 0
 
+player_location = ""
 areas = {
     "cell":
-        {"description": "A small dank room with a stained bed and window with iron bars.",
+        {"description": """A small dank room with a stained bed and a grimy window with iron bars.
+An old paint chipped door is to your left.""",
          "items": ["key"],
          "exits": {
             "north": "wall",
@@ -18,6 +20,8 @@ areas = {
 
 }
 
+def look_around(location):
+    print(areas[location]["items"])
 door_locked = True
 bed_found = False
 door_found = False
@@ -27,6 +31,7 @@ print("Ready to play?")
 response = input("> ")
 if response.lower() == "yes" or response.lower() == "y":
     playing = True
+    player_location = "cell"
     print("You are in a dark room")
 
 while playing:
@@ -50,14 +55,8 @@ while playing:
             print("You have: " + ", ".join(inventory))
 
     elif command == "look around":
-        print("You are in a dark room.")
-        print("To the east, a scruffy window")
-        print("with rusted iron bars.")
-        print("Empty space and a grim, mouldy wall lies to the north.")
-        print("The bed you awoke from, stained with something")
-        print("you don't want to think about, is in the south.")
+        look_around(player_location)
         bed_found = True
-        print("To the west, a heavy looking wooden door with cracked paint.")
         door_found = True
 
     elif command == "go north":
