@@ -60,6 +60,6 @@ with open("CSV Example.csv", encoding="utf-8-sig") as file:
             oldest = int(row[1])
             name = str(row[0])
     print(oldest)
-    print(f"{name} is the oldest at {oldest}")
+    print(f"{name} is the oldest at {oldest} years old.")
 
 
