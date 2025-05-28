@@ -32,5 +32,19 @@ with open("CSV Example.csv", encoding="utf-8-sig") as file:
     print(rating_count)
     ave_rating = total_rating / rating_count
     print(ave_rating)
+    print("-----------")
+
+    ave_rating = 0
+    rating_count = 0
+    total_rating = 0
+
+    for row in data:
+        if int(row[2]) > 80:
+            rating_count += 1
+            total_rating += int(row[2])
+        ave_rating = total_rating / rating_count
+        print(ave_rating)
+    ave_rating = total_rating / rating_count
+    print(round(ave_rating))
 
 
