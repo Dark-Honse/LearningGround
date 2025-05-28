@@ -22,6 +22,9 @@ with open("CSV Example.csv", encoding="utf-8-sig") as file:
 
     print(total_age)
     print(round(ave_age))
+    age_count = 0
+    total_age = 0
+    ave_age = 0
 
     print("--------------")
 
